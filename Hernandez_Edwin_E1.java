@@ -103,7 +103,7 @@ public class Hernandez_Edwin_E1 {
                 System.out.println("Número Promedio: " + promedio + "\n");
 
             } else if (opcion == 3) {
-                System.out.println("3- 3");
+                System.out.println("\n3- 3\n");
 
                 String nombre;
                 String canal;
@@ -111,12 +111,12 @@ public class Hernandez_Edwin_E1 {
                 String repetir;
                 int cicloCanal = 1;
                 int cicloRepetir = 1;
-                int cicloCaja=1;
+                int cicloCaja = 1;
                 int hd = 0;
                 int hdPrecio;
                 int normal = 0;
                 int normalPrecio;
-                int cajaPrecio=0;
+                int cajaPrecio = 0;
                 double impuesto;
                 double total;
                 double subtotal;
@@ -164,45 +164,71 @@ public class Hernandez_Edwin_E1 {
                     cicloCanal = 1;
 
                 } while (repetir.equals("si"));
-                
-                System.out.print("Ingrese el tipo de Caja Digital (LIGHTBOX / LIGHTBOX / DVRBOX):" );
-                
-                do{
-                    caja=scan.next().toUpperCase();
-                    
+
+                System.out.print("Ingrese el tipo de Caja Digital (LIGHTBOX / LIGHTBOX / DVRBOX):");
+
+                do {
+                    caja = scan.next().toUpperCase();
+
                     if (!caja.equals("LIGHTBOX") && !caja.equals("LIGHTBOX") && !caja.equals("DVRBOX")) {
-                            System.out.print("Ingrese una opción válida (LIGHTBOX / LIGHTBOX / DVRBOX): ");
+                        System.out.print("Ingrese una opción válida (LIGHTBOX / LIGHTBOX / DVRBOX): ");
 
-                        } else if (caja.equals("LIGHTBOX")) {
-                            cicloCaja = 0;
-                            cajaPrecio=50;
+                    } else if (caja.equals("LIGHTBOX")) {
+                        cicloCaja = 0;
+                        cajaPrecio = 50;
 
-                        } else if (caja.equals("LIGHTBOX")) {
-                            cicloCaja = 0;
-                            cajaPrecio=100;
-                            
-                        }  else if (caja.equals("DVRBOX")) {
-                            cicloCaja = 0;
-                            cajaPrecio=150;
-                        }
-                    
-                }while (cicloCaja>0);
+                    } else if (caja.equals("LIGHTBOX")) {
+                        cicloCaja = 0;
+                        cajaPrecio = 100;
+
+                    } else if (caja.equals("DVRBOX")) {
+                        cicloCaja = 0;
+                        cajaPrecio = 150;
+                    }
+
+                } while (cicloCaja > 0);
 
                 normalPrecio = normal * 20;
                 hdPrecio = hd * 30;
                 subtotal = normalPrecio + hdPrecio;
-                impuesto = subtotal*0.15;
-                total = subtotal+impuesto+cajaPrecio;
+                impuesto = subtotal * 0.15;
+                total = subtotal + impuesto + cajaPrecio;
 
                 System.out.println("\n** Factura **\n");
-                System.out.println("Nombre: "+nombre);
+                System.out.println("Nombre: " + nombre);
                 System.out.println(normal + " canales normales: Lps." + normalPrecio);
                 System.out.println(hd + " canales HD: Lps." + hdPrecio);
-                System.out.println("ISV 15%: Lps."+impuesto);
-                System.out.println("Total: Lps."+total+"\n");
+                System.out.println("ISV 15%: Lps." + impuesto);
+                System.out.println("Total: Lps." + total + "\n");
 
             } else if (opcion == 4) {
-                System.out.println("4- Carácteres Vocales");
+                System.out.println("\n4- Carácteres Vocales\n");
+
+                String cadena;
+                int vocales = 0;
+                int contador1 = 0;
+                int contador2 = 0;
+                int contador3 = 1;
+
+                System.out.print("Ingrese una cadena: ");
+                cadena = scan.next().toLowerCase();
+
+                while (contador1 < cadena.length()) {
+                    if (cadena.substring(contador2, (contador3)).equals("a") || cadena.substring(contador2, (contador3)).equals("e") || cadena.substring(contador2, (contador3)).equals("i") || cadena.substring(contador2, (contador3)).equals("o") || cadena.substring(contador2, (contador3)).equals("u")) {
+                        contador1++;
+                        contador2++;
+                        contador3++;
+                        vocales++;
+
+                    }
+
+                    contador1++;
+                    contador2++;
+                    contador3++;
+
+                }
+
+                System.out.println("Cantidad de vocales: " + vocales);
 
             } else if (opcion == 5) {
                 System.out.println("HASTA LUEGO");
