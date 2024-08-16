@@ -18,22 +18,32 @@ public class Hernandez_Edwin_E1 {
         int menu = 1;
         int opcion;
 
+        //Menú
         do {
             System.out.println("--- Menú ---\n");
             System.out.println("1- Pirámide");
             System.out.println("2- El Mayor");
-            System.out.println("3- 3");
+            System.out.println("3- Paquetes de Canales");
             System.out.println("4- Carácteres Vocales");
             System.out.println("5- Salir\n");
             System.out.print("Ingrese su opción: ");
             opcion = scan.nextInt();
 
+            
+            
+            
+            //Opción inválida
             if (opcion < 1 || opcion > 5) {
                 System.out.println("\nIngrese una opción válida\n");
 
+                
+                
+                
+                //1- Pirámide
             } else if (opcion == 1) {
                 System.out.println("\n1- Pirámide\n");
 
+                String fila="";
                 int cantidadFila = 0;
                 int cicloFila = 1;
                 int contador = 1;
@@ -58,19 +68,28 @@ public class Hernandez_Edwin_E1 {
 
                 do {
                     while (cicloPiramide < contador) {
+                        System.out.print("Ingrese los números de la fila #"+(contador)+": ");
                         numero = scan.nextInt();
+                        fila+=numero+" ";
                         suma += numero;
                         cicloPiramide++;
 
                     }
-                    System.out.println("= " + suma + "\n");
+                    System.out.println("");
+                    fila+= (" = " + suma + "\n");
                     contador++;
                     cicloNumero++;
                     cicloPiramide = 0;
                     suma = 0;
 
                 } while (cicloNumero < cantidadFila);
+                System.out.print("Cantidad de fila de la pirámide: "+cantidadFila+"\n");
+                System.out.println(fila);
 
+                
+                
+                
+                //2- El Mayor
             } else if (opcion == 2) {
                 System.out.println("\n2- El Mayor\n");
                 String numeroString;
@@ -102,8 +121,12 @@ public class Hernandez_Edwin_E1 {
                 System.out.println("\nNúmero Mayor Ingresado: " + mayor);
                 System.out.println("Número Promedio: " + promedio + "\n");
 
+                
+                
+                
+                //3- Paquetes de Canales
             } else if (opcion == 3) {
-                System.out.println("\n3- 3\n");
+                System.out.println("\n3- Paquetes de Canales\n");
 
                 String nombre;
                 String canal;
@@ -201,6 +224,10 @@ public class Hernandez_Edwin_E1 {
                 System.out.println("ISV 15%: Lps." + impuesto);
                 System.out.println("Total: Lps." + total + "\n");
 
+                
+                
+                
+                //4- Carácteres Vocales
             } else if (opcion == 4) {
                 System.out.println("\n4- Carácteres Vocales\n");
 
@@ -230,6 +257,10 @@ public class Hernandez_Edwin_E1 {
 
                 System.out.println("Cantidad de vocales: " + vocales);
 
+                
+                
+                
+                //5- Salir
             } else if (opcion == 5) {
                 System.out.println("HASTA LUEGO");
                 menu = 0;
